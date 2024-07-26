@@ -29,7 +29,9 @@ public @interface NoPositionDuplicates {
     Class<?>[] groups() default {};
     Class<?>[] payload() default {};
 
-
+    /**
+     * Checks if there are any duplicate positions in the given list.
+     */
     class NoPositionDuplicatesValidator implements ConstraintValidator<NoPositionDuplicates, Simulation> {
 
         @Override

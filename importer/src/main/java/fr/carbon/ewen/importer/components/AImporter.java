@@ -11,6 +11,10 @@ import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * An abstract importer for a given type.
+ * @param <T> the type of the item to import.
+ */
 @Getter
 @AllArgsConstructor
 public abstract class AImporter<T> {

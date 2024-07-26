@@ -9,21 +9,28 @@ import one.util.streamex.StreamEx;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * Interface for all items that can collide with other items.
+ */
 public sealed interface CollisionListener permits Explorer, Mountain, Treasure {
 
     /**
-     * Get the position of the collidable item.
+     * Get the item position.
      * @return a position
      */
     @NotNull @Valid Position getPosition();
 
     /**
-     * Handle the collision with another collidable item.
-     * @param item the collidable item that this item collided with
+     * Handle collision with another item.
+     * @param item the colliding item
      */
     void onCollisionWith(@NotNull CollisionListener item) throws CollisionException;
 
-
+    /**
+     * Detect and handle collisions among all items.
+     * @param items the items to check for collisions
+     * @throws CollisionException if an unauthorized collision occurred
+     */
     static void detectCollisions(@NotNull List<@NotNull CollisionListener> items) throws CollisionException {
         var collisions = items.stream()
             .collect(Collectors.toMap(

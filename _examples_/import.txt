@@ -1,0 +1,5 @@
+C - 3 - 3
+M - 0 - 0
+M - 1 - 1
+T - 2 - 2 - 1
+A - explorer1 - 1 - 0 - S - GADAADA

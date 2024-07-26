@@ -29,6 +29,11 @@ public @NoPositionDuplicates
     private final @NotNull @NoExplorerNameDuplicates List<@Valid Explorer> explorers;
     private boolean played = false;
 
+    /**
+     * Run the simulation.
+     * @throws CollisionException if an explorer collides with another explorer or a mountain.
+     * @throws ExplorerOutOfMapException if an explorer tries to move outside the map.
+     */
     public void run() throws CollisionException, ExplorerOutOfMapException {
 
         if (played) throw new IllegalStateException("Simulation has already been run!");

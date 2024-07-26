@@ -5,6 +5,9 @@ import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+/**
+ * Represents an orientation in the 2D space.
+ */
 @AllArgsConstructor
 @Getter
 public enum Orientation {

@@ -25,7 +25,9 @@ public @interface PositiveTreasureCount {
     Class<?>[] groups() default {};
     Class<?>[] payload() default {};
 
-
+    /**
+     * Checks if the treasure count is positive.
+     */
     class PositiveTreasureCountValidator implements ConstraintValidator<PositiveTreasureCount, Treasure.TreasureState> {
 
         @Override

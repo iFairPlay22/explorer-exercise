@@ -29,11 +29,14 @@ public class SimulationImporter {
 
         var importers = List.of(mapImporter, mountainImporter, treasureImporter, explorerImporter);
         for (var line : FileUtils.readLines(inputFileName)) {
+
+            // Ignore comment lines
             if (line.startsWith("#")) {
                 log.info("Skipping comment line: {}", line);
                 continue ;
             }
 
+            // Parse line and count successful imports
             var count = importers
                 .stream()
                 .map(importer -> importer.tryImport(line))

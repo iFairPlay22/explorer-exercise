@@ -28,7 +28,9 @@ public @interface NoExplorerNameDuplicates {
     Class<?>[] groups() default {};
     Class<?>[] payload() default {};
 
-
+    /**
+     * Checks if there are any duplicate explorer names in the given list.
+     */
     class NoExplorerNameDuplicatesValidator implements ConstraintValidator<NoExplorerNameDuplicates, List<Explorer>> {
 
         @Override

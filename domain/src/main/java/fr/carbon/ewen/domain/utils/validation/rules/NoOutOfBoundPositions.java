@@ -29,6 +29,9 @@ public @interface NoOutOfBoundPositions {
     Class<?>[] payload() default {};
 
 
+    /**
+     * Checks if all positions in the simulation are within the boundaries of the map.
+     */
     class NoPositionDuplicatesValidator implements ConstraintValidator<NoOutOfBoundPositions, Simulation> {
 
         @Override

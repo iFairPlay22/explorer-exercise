@@ -4,6 +4,11 @@ package fr.carbon.ewen.domain.general;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
 
+/**
+ * Represents a position in the 2D space.
+ * @param width
+ * @param height
+ */
 public record Position(@PositiveOrZero int width, @PositiveOrZero int height) {
 
     /**

@@ -10,8 +10,8 @@ public class ExplorerOutOfMapException extends Exception {
     @Override
     public String getMessage() {
         return String.format(
-                "Explorer %s is out of map",
-                explorer
+            "Explorer %s is out of map",
+            explorer
         );
     }
 }

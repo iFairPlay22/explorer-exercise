@@ -13,6 +13,12 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
 
+/**
+ * Explorer character.
+ * @param name Name (identifier)
+ * @param movements Movements to do (e.g., left, right, forward)
+ * @param state Current state of the explorer
+ */
 @Slf4j
 public record Explorer(
     @NotNull @Size(min = 3, max = 10) String name,
@@ -72,6 +78,9 @@ public record Explorer(
         private int treasuresFound;
     };
 
+    /**
+     * All possible explorer actions.
+     */
     public enum ExplorerAction {
         MOVE_FORWARD,
         ROTATE_LEFT,

@@ -3,7 +3,6 @@ package fr.carbon.ewen.simulation;
 import fr.carbon.ewen.domain.exceptions.CollisionException;
 import fr.carbon.ewen.domain.exceptions.ExplorerOutOfMapException;
 import fr.carbon.ewen.domain.utils.io.FileUtils;
-import fr.carbon.simulation.Main;
 import jakarta.validation.constraints.NotNull;
 import org.junit.jupiter.api.Test;
 import java.util.List;

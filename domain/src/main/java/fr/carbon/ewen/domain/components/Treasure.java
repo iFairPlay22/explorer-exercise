@@ -22,6 +22,10 @@ public record Treasure(
         return position;
     }
 
+    /**
+     * Return true if the treasure can be collected, false otherwise.
+     * @return true is the count is positive.
+     */
     public boolean canBeCollected() {
         return 0 < state.count;
     }

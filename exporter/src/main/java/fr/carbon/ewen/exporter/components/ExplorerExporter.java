@@ -7,7 +7,6 @@ import jakarta.validation.constraints.NotNull;
 
 public class ExplorerExporter extends AExporter<Explorer> {
 
-
     @Override
     public @NotNull String export(@NotNull Explorer explorer) {
         return String.format(
