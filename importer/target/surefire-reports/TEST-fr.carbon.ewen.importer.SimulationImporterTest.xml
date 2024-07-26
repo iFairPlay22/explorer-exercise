@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="fr.carbon.ewen.importer.SimulationImporterTest" time="0.262" tests="7" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/ewen_bouquet/Documents/Carbon/fr.carbon.ewen/importer/target/test-classes:/Users/ewen_bouquet/Documents/Carbon/fr.carbon.ewen/importer/target/classes:/Users/ewen_bouquet/Documents/Carbon/fr.carbon.ewen/domain/target/classes:/Users/ewen_bouquet/.m2/repository/org/projectlombok/lombok/1.18.34/lombok-1.18.34.jar:/Users/ewen_bouquet/.m2/repository/ch/qos/logback/logback-classic/1.5.6/logback-classic-1.5.6.jar:/Users/ewen_bouquet/.m2/repository/ch/qos/logback/logback-core/1.5.6/logback-core-1.5.6.jar:/Users/ewen_bouquet/.m2/repository/org/slf4j/slf4j-api/2.0.13/slf4j-api-2.0.13.jar:/Users/ewen_bouquet/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.1.Final/hibernate-validator-8.0.1.Final.jar:/Users/ewen_bouquet/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/Users/ewen_bouquet/.m2/repository/org/jboss/logging/jboss-logging/3.4.3.Final/jboss-logging-3.4.3.Final.jar:/Users/ewen_bouquet/.m2/repository/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar:/Users/ewen_bouquet/.m2/repository/org/glassfish/expressly/expressly/5.0.0/expressly-5.0.0.jar:/Users/ewen_bouquet/.m2/repository/jakarta/el/jakarta.el-api/5.0.0/jakarta.el-api-5.0.0.jar:/Users/ewen_bouquet/.m2/repository/one/util/streamex/0.8.2/streamex-0.8.2.jar:/Users/ewen_bouquet/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2.jar:/Users/ewen_bouquet/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:/Users/ewen_bouquet/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/ewen_bouquet/.m2/repository/org/junit/platform/junit-platform-commons/1.10.2/junit-platform-commons-1.10.2.jar:/Users/ewen_bouquet/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.2/junit-jupiter-api-5.10.2.jar:/Users/ewen_bouquet/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/ewen_bouquet/.m2/repository/org/assertj/assertj-core/3.26.3/assertj-core-3.26.3.jar:/Users/ewen_bouquet/.m2/repository/net/bytebuddy/byte-buddy/1.14.18/byte-buddy-1.14.18.jar:"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="Europe/Paris"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/Users/ewen_bouquet/.sdkman/candidates/java/21.0.3-tem/lib"/>
+    <property name="sun.java.command" value="/Users/ewen_bouquet/Documents/Carbon/fr.carbon.ewen/importer/target/surefire/surefirebooter-20240726131200996_3.jar /Users/ewen_bouquet/Documents/Carbon/fr.carbon.ewen/importer/target/surefire 2024-07-26T13-12-00_949-jvmRun1 surefire-20240726131200996_1tmp surefire_0-20240726131200996_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/ewen_bouquet/Documents/Carbon/fr.carbon.ewen/importer/target/test-classes:/Users/ewen_bouquet/Documents/Carbon/fr.carbon.ewen/importer/target/classes:/Users/ewen_bouquet/Documents/Carbon/fr.carbon.ewen/domain/target/classes:/Users/ewen_bouquet/.m2/repository/org/projectlombok/lombok/1.18.34/lombok-1.18.34.jar:/Users/ewen_bouquet/.m2/repository/ch/qos/logback/logback-classic/1.5.6/logback-classic-1.5.6.jar:/Users/ewen_bouquet/.m2/repository/ch/qos/logback/logback-core/1.5.6/logback-core-1.5.6.jar:/Users/ewen_bouquet/.m2/repository/org/slf4j/slf4j-api/2.0.13/slf4j-api-2.0.13.jar:/Users/ewen_bouquet/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.1.Final/hibernate-validator-8.0.1.Final.jar:/Users/ewen_bouquet/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/Users/ewen_bouquet/.m2/repository/org/jboss/logging/jboss-logging/3.4.3.Final/jboss-logging-3.4.3.Final.jar:/Users/ewen_bouquet/.m2/repository/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar:/Users/ewen_bouquet/.m2/repository/org/glassfish/expressly/expressly/5.0.0/expressly-5.0.0.jar:/Users/ewen_bouquet/.m2/repository/jakarta/el/jakarta.el-api/5.0.0/jakarta.el-api-5.0.0.jar:/Users/ewen_bouquet/.m2/repository/one/util/streamex/0.8.2/streamex-0.8.2.jar:/Users/ewen_bouquet/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2.jar:/Users/ewen_bouquet/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:/Users/ewen_bouquet/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/ewen_bouquet/.m2/repository/org/junit/platform/junit-platform-commons/1.10.2/junit-platform-commons-1.10.2.jar:/Users/ewen_bouquet/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.2/junit-jupiter-api-5.10.2.jar:/Users/ewen_bouquet/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/ewen_bouquet/.m2/repository/org/assertj/assertj-core/3.26.3/assertj-core-3.26.3.jar:/Users/ewen_bouquet/.m2/repository/net/bytebuddy/byte-buddy/1.14.18/byte-buddy-1.14.18.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/ewen_bouquet"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-04-16"/>
+    <property name="java.home" value="/Users/ewen_bouquet/.sdkman/candidates/java/21.0.3-tem"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/ewen_bouquet/Documents/Carbon/fr.carbon.ewen/importer"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/ewen_bouquet/Documents/Carbon/fr.carbon.ewen/importer/target/surefire/surefirebooter-20240726131200996_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.3+9-LTS"/>
+    <property name="user.name" value="ewen_bouquet"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="14.4"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-21.0.3+9"/>
+    <property name="localRepository" value="/Users/ewen_bouquet/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="/var/folders/m7/g7z589c914365v591rz3sqc80000gn/T/"/>
+    <property name="java.version" value="21.0.3"/>
+    <property name="user.dir" value="/Users/ewen_bouquet/Documents/Carbon/fr.carbon.ewen/importer"/>
+    <property name="os.arch" value="aarch64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/ewen_bouquet/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="21.0.3+9-LTS"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="shouldImportValidData" classname="fr.carbon.ewen.importer.SimulationImporterTest" time="0.17">
+    <system-out><![CDATA[13:12:01.268 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: C - 3 - 3
+13:12:01.270 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: M - 0 - 0
+13:12:01.270 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: M - 1 - 1
+13:12:01.270 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: T - 2 - 2 - 1
+13:12:01.271 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: A - explorer1 - 0 - 1 - S - GADAADAA
+13:12:01.282 [main] DEBUG org.jboss.logging -- Logging Provider: org.jboss.logging.Slf4jLoggerProvider
+13:12:01.282 [main] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 8.0.1.Final
+13:12:01.284 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser -- Trying to load META-INF/validation.xml for XML based Validator configuration.
+13:12:01.284 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper -- Trying to load META-INF/validation.xml via TCCL
+13:12:01.284 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper -- Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+13:12:01.284 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser -- No META-INF/validation.xml found. Using annotation based configuration only.
+13:12:01.285 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers -- Cannot find jakarta.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+13:12:01.292 [main] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator -- Loaded expression factory via original TCCL
+13:12:01.314 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+13:12:01.315 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+13:12:01.315 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+13:12:01.316 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+13:12:01.316 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+13:12:01.316 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+]]></system-out>
+  </testcase>
+  <testcase name="shouldNotImportWhenPositionDuplicates" classname="fr.carbon.ewen.importer.SimulationImporterTest" time="0.031">
+    <system-out><![CDATA[13:12:01.393 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: C - 3 - 3
+13:12:01.393 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: M - 0 - 0
+13:12:01.393 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: M - 0 - 0
+13:12:01.394 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser -- Trying to load META-INF/validation.xml for XML based Validator configuration.
+13:12:01.394 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper -- Trying to load META-INF/validation.xml via TCCL
+13:12:01.394 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper -- Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+13:12:01.394 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser -- No META-INF/validation.xml found. Using annotation based configuration only.
+13:12:01.394 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers -- Cannot find jakarta.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+13:12:01.394 [main] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator -- Loaded expression factory via original TCCL
+13:12:01.395 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+13:12:01.395 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+13:12:01.395 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+13:12:01.395 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+13:12:01.395 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+13:12:01.395 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+13:12:01.402 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: C - 3 - 3
+13:12:01.402 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: M - 0 - 0
+13:12:01.402 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: T - 0 - 0 - 1
+13:12:01.402 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser -- Trying to load META-INF/validation.xml for XML based Validator configuration.
+13:12:01.402 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper -- Trying to load META-INF/validation.xml via TCCL
+13:12:01.403 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper -- Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+13:12:01.403 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser -- No META-INF/validation.xml found. Using annotation based configuration only.
+13:12:01.403 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers -- Cannot find jakarta.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+13:12:01.403 [main] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator -- Loaded expression factory via original TCCL
+13:12:01.403 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+13:12:01.403 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+13:12:01.403 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+13:12:01.404 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+13:12:01.404 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+13:12:01.404 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+13:12:01.412 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: C - 3 - 3
+13:12:01.412 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: T - 0 - 0 - 1
+13:12:01.412 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: A - exp1 - 0 - 0 - S - AAA
+13:12:01.412 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser -- Trying to load META-INF/validation.xml for XML based Validator configuration.
+13:12:01.412 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper -- Trying to load META-INF/validation.xml via TCCL
+13:12:01.412 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper -- Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+13:12:01.412 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser -- No META-INF/validation.xml found. Using annotation based configuration only.
+13:12:01.412 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers -- Cannot find jakarta.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+13:12:01.412 [main] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator -- Loaded expression factory via original TCCL
+13:12:01.413 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+13:12:01.413 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+13:12:01.413 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+13:12:01.413 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+13:12:01.413 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+13:12:01.413 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+]]></system-out>
+  </testcase>
+  <testcase name="shouldNotImportWhenMultipleExplorerNames" classname="fr.carbon.ewen.importer.SimulationImporterTest" time="0.02">
+    <system-out><![CDATA[13:12:01.424 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: C - 3 - 3
+13:12:01.424 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: A - exp1 - 0 - 0 - S - AAA
+13:12:01.424 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: A - exp1 - 0 - 0 - S - AAA
+13:12:01.425 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser -- Trying to load META-INF/validation.xml for XML based Validator configuration.
+13:12:01.425 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper -- Trying to load META-INF/validation.xml via TCCL
+13:12:01.425 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper -- Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+13:12:01.425 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser -- No META-INF/validation.xml found. Using annotation based configuration only.
+13:12:01.425 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers -- Cannot find jakarta.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+13:12:01.425 [main] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator -- Loaded expression factory via original TCCL
+13:12:01.425 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+13:12:01.426 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+13:12:01.426 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+13:12:01.426 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+13:12:01.426 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+13:12:01.426 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+13:12:01.435 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: C - 3 - 3
+13:12:01.435 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: A - exp1 - 0 - 0 - S - AAA
+13:12:01.435 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: A - exp1 - 1 - 1 - S - AAA
+13:12:01.435 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser -- Trying to load META-INF/validation.xml for XML based Validator configuration.
+13:12:01.435 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper -- Trying to load META-INF/validation.xml via TCCL
+13:12:01.435 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper -- Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+13:12:01.435 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser -- No META-INF/validation.xml found. Using annotation based configuration only.
+13:12:01.435 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers -- Cannot find jakarta.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+13:12:01.435 [main] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator -- Loaded expression factory via original TCCL
+13:12:01.436 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+13:12:01.436 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+13:12:01.436 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+13:12:01.436 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+13:12:01.436 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+13:12:01.436 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+]]></system-out>
+  </testcase>
+  <testcase name="shouldNotImportWhenOutOfBoundPositions" classname="fr.carbon.ewen.importer.SimulationImporterTest" time="0.025">
+    <system-out><![CDATA[13:12:01.444 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: C - 3 - 3
+13:12:01.444 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: M - 1000 - 0
+13:12:01.445 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser -- Trying to load META-INF/validation.xml for XML based Validator configuration.
+13:12:01.445 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper -- Trying to load META-INF/validation.xml via TCCL
+13:12:01.445 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper -- Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+13:12:01.445 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser -- No META-INF/validation.xml found. Using annotation based configuration only.
+13:12:01.445 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers -- Cannot find jakarta.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+13:12:01.445 [main] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator -- Loaded expression factory via original TCCL
+13:12:01.445 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+13:12:01.446 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+13:12:01.446 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+13:12:01.446 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+13:12:01.446 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+13:12:01.446 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+13:12:01.450 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: C - 3 - 3
+13:12:01.450 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: M - 0 - 1000
+13:12:01.450 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser -- Trying to load META-INF/validation.xml for XML based Validator configuration.
+13:12:01.450 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper -- Trying to load META-INF/validation.xml via TCCL
+13:12:01.450 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper -- Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+13:12:01.450 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser -- No META-INF/validation.xml found. Using annotation based configuration only.
+13:12:01.450 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers -- Cannot find jakarta.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+13:12:01.450 [main] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator -- Loaded expression factory via original TCCL
+13:12:01.451 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+13:12:01.451 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+13:12:01.451 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+13:12:01.451 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+13:12:01.451 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+13:12:01.451 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+13:12:01.455 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: C - 3 - 3
+13:12:01.455 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: T - 1000 - 10000 - 1
+13:12:01.455 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser -- Trying to load META-INF/validation.xml for XML based Validator configuration.
+13:12:01.455 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper -- Trying to load META-INF/validation.xml via TCCL
+13:12:01.455 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper -- Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+13:12:01.455 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser -- No META-INF/validation.xml found. Using annotation based configuration only.
+13:12:01.455 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers -- Cannot find jakarta.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+13:12:01.456 [main] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator -- Loaded expression factory via original TCCL
+13:12:01.456 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+13:12:01.456 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+13:12:01.456 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+13:12:01.456 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+13:12:01.456 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+13:12:01.456 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+13:12:01.461 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: C - 3 - 3
+13:12:01.461 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: A - exp1 - 1000 - 10000 - S - AAA
+13:12:01.461 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser -- Trying to load META-INF/validation.xml for XML based Validator configuration.
+13:12:01.461 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper -- Trying to load META-INF/validation.xml via TCCL
+13:12:01.461 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper -- Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+13:12:01.461 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser -- No META-INF/validation.xml found. Using annotation based configuration only.
+13:12:01.461 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers -- Cannot find jakarta.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+13:12:01.462 [main] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator -- Loaded expression factory via original TCCL
+13:12:01.462 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+13:12:01.462 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+13:12:01.462 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+13:12:01.462 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+13:12:01.462 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+13:12:01.462 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+]]></system-out>
+  </testcase>
+  <testcase name="shouldNotImportWhenBadLineFormat" classname="fr.carbon.ewen.importer.SimulationImporterTest" time="0.003">
+    <system-out><![CDATA[13:12:01.470 [main] WARN fr.carbon.ewen.importer.SimulationImporter -- No importer could parse the line: 
+13:12:01.470 [main] WARN fr.carbon.ewen.importer.SimulationImporter -- No importer could parse the line: XXX
+13:12:01.470 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: M - 1 - 1
+13:12:01.470 [main] WARN fr.carbon.ewen.importer.SimulationImporter -- No importer could parse the line: XXX
+]]></system-out>
+  </testcase>
+  <testcase name="shouldOnlyTakeIntoAccountTheFirstMap" classname="fr.carbon.ewen.importer.SimulationImporterTest" time="0.004">
+    <system-out><![CDATA[13:12:01.471 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: C - 1 - 1
+13:12:01.472 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: C - 2 - 2
+13:12:01.472 [main] WARN fr.carbon.ewen.importer.SimulationImporter -- More than 1 map was found in the file. Only the first one is taking into account
+13:12:01.472 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser -- Trying to load META-INF/validation.xml for XML based Validator configuration.
+13:12:01.472 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper -- Trying to load META-INF/validation.xml via TCCL
+13:12:01.472 [main] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper -- Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+13:12:01.472 [main] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser -- No META-INF/validation.xml found. Using annotation based configuration only.
+13:12:01.472 [main] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers -- Cannot find jakarta.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+13:12:01.472 [main] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator -- Loaded expression factory via original TCCL
+13:12:01.473 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+13:12:01.473 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+13:12:01.473 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+13:12:01.473 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+13:12:01.473 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+13:12:01.473 [main] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper -- HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+]]></system-out>
+  </testcase>
+  <testcase name="shouldNotImportWhenNoMapProvided" classname="fr.carbon.ewen.importer.SimulationImporterTest" time="0.002">
+    <system-out><![CDATA[13:12:01.476 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: M - 0 - 0
+13:12:01.476 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: T - 0 - 0 - 1
+13:12:01.477 [main] INFO fr.carbon.ewen.importer.SimulationImporter -- Line parsed successfully: A - exp1 - 0 - 0 - S - AAA
+]]></system-out>
+  </testcase>
+</testsuite>

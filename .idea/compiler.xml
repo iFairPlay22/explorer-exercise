@@ -6,7 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="fr.carbon.ewen" />
+        <module name="importer" />
+        <module name="exporter" />
+        <module name="simulation" />
+        <module name="domain" />
       </profile>
     </annotationProcessing>
   </component>
