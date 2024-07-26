@@ -1,8 +1,9 @@
 package fr.carbon.ewen.domain.components;
 
+import fr.carbon.ewen.domain.Simulation;
+import fr.carbon.ewen.domain.exceptions.CollisionException;
 import fr.carbon.ewen.domain.general.Orientation;
 import fr.carbon.ewen.domain.general.Position;
-import fr.carbon.ewen.domain.exceptions.CollisionException;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
@@ -40,28 +41,38 @@ public record Explorer(
         state.orientation = state.orientation.rotateRight();
     }
 
-    public void moveForward() {
+    public void moveForward(@NotNull Simulation simulation) {
+        Position nextPosition = state.position.copy().move(state.orientation);
+
+        if (!simulation.getMap().isInside(nextPosition)) {
+            log.warn("{} could not move forward due to out of map", this);
+            return ;
+        }
+
+        if (simulation.getMountains().stream().map(Mountain::position).anyMatch(mountain -> mountain.equals(nextPosition))) {
+            log.warn("{} could not move forward due to collision with a mountain", this);
+            return ;
+        }
+
         log.info("{} is moving forward", this);
-        state.position = state.position.move(state.orientation);
+        state.position = nextPosition;
     }
 
     @Override
     public void onCollisionWith(@NotNull CollisionListener collisionListener) throws CollisionException {
         switch (collisionListener) {
-            case Treasure treasure:
+            case Treasure treasure -> {
                 if (treasure.canBeCollected()) {
                     log.info("{} collected a treasure {}", this, treasure);
                     state.treasuresFound = state().treasuresFound + 1;
                 } else {
                     log.warn("{} could not collect {}", this, treasure);
                 }
-                break;
-            case Mountain mountain:
-                log.warn("{} collided with mountain {}", this, mountain);
-                throw new CollisionException(this, mountain);
-            case Explorer explorer:
+            }
+            case Explorer explorer -> {
                 log.warn("{} collided with explorer {}", this, explorer);
                 throw new CollisionException(this, explorer);
+            }
         }
     }
 

@@ -20,4 +20,8 @@ public record Position(@PositiveOrZero int width, @PositiveOrZero int height) {
         Direction direction = orientation.getDirection();
         return new Position(width + direction.x(), height + direction.y());
     }
+
+    public Position copy() {
+        return new Position(width, height);
+    }
 }

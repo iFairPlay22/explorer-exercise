@@ -1,11 +1,11 @@
 package fr.carbon.ewen.simulation;
 
 import fr.carbon.ewen.domain.exceptions.CollisionException;
-import fr.carbon.ewen.domain.exceptions.ExplorerOutOfMapException;
 import fr.carbon.ewen.domain.utils.io.FileUtils;
 import jakarta.validation.constraints.NotNull;
 import org.junit.jupiter.api.Test;
 import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -52,40 +52,56 @@ public class MainTest {
     }
 
     @Test
-    public void shouldStopSimulationWhenOutOfBound() {
-        List.of(
-            List.of("C - 1 - 1", "A - explorer1 - 0 - 0 - N - A"),
-            List.of("C - 1 - 1", "A - explorer1 - 0 - 0 - S - A"),
-            List.of("C - 1 - 1", "A - explorer1 - 0 - 0 - W - A"),
-            List.of("C - 1 - 1", "A - explorer1 - 0 - 0 - E - A")
-        ).forEach(content -> assertThrows(ExplorerOutOfMapException.class, () -> testSimulation(content)));
+    public void shouldRunSimulationAndGetsBlocked() throws Exception {
+        assertThat(testSimulation(
+            List.of(
+                "C - 3 - 3",
+                "M - 0 - 0",
+                "M - 1 - 1",
+                "T - 2 - 2 - 1",
+                "A - explorer1 - 1 - 0 - S - AAAGAAADAAADAAA"
+            )
+        )).isEqualTo(List.of(
+            "C - 3 - 3",
+            "M - 0 - 0",
+            "M - 1 - 1",
+            "T - 2 - 2 - 0",
+            "A - explorer1 - 0 - 2 - W - 1"
+        ));
     }
 
     @Test
-    public void shouldStopSimulationWhenCollisionExplorerMountain() {
-        assertThrows(
-            CollisionException.class,
-            () -> testSimulation(
-                List.of(
-                    "C - 2 - 1",
-                    "M - 1 - 0",
-                    "A - explorer1 - 0 - 0 - E - A"
-                )
-            )
-        );
+    public void playerShouldStopAndNotExitMap() throws Exception {
+        assertThat(testSimulation(List.of("C - 1 - 1", "A - explorer1 - 0 - 0 - N - A")))
+            .isEqualTo(List.of("C - 1 - 1", "A - explorer1 - 0 - 0 - N - 0"));
+        assertThat(testSimulation(List.of("C - 1 - 1", "A - explorer1 - 0 - 0 - S - A")))
+            .isEqualTo(List.of("C - 1 - 1", "A - explorer1 - 0 - 0 - S - 0"));
+        assertThat(testSimulation(List.of("C - 1 - 1", "A - explorer1 - 0 - 0 - W - A")))
+            .isEqualTo(List.of("C - 1 - 1", "A - explorer1 - 0 - 0 - W - 0"));
+        assertThat(testSimulation(List.of("C - 1 - 1", "A - explorer1 - 0 - 0 - E - A")))
+            .isEqualTo(List.of("C - 1 - 1", "A - explorer1 - 0 - 0 - E - 0"));
+
+    }
+
+    @Test
+    public void playerShouldNotCollideWithMountain() throws Exception {
+        assertThat(testSimulation(List.of("C - 1 - 2", "M - 0 - 1", "A - explorer1 - 0 - 0 - S - A")))
+            .isEqualTo(List.of("C - 1 - 2", "M - 0 - 1", "A - explorer1 - 0 - 0 - S - 0"));
+        assertThat(testSimulation(List.of("C - 1 - 2", "M - 0 - 1", "A - explorer1 - 0 - 0 - S - AAADDDDAAAGGGGAAADGAAGDAA")))
+            .isEqualTo(List.of("C - 1 - 2", "M - 0 - 1", "A - explorer1 - 0 - 0 - S - 0"));
     }
 
     @Test
     public void shouldStopSimulationWhenCollisionExplorerExplorer() {
         assertThrows(
-                CollisionException.class,
-                () -> testSimulation(
-                        List.of(
-                            "C - 2 - 1",
-                            "A - explorer1 - 0 - 0 - E - A",
-                            "A - explorer2 - 1 - 0 - E - A"
-                        )
+            CollisionException.class,
+            () -> testSimulation(
+                List.of(
+                    "C - 2 - 1",
+                    "A - explorer1 - 0 - 0 - E - A",
+                    "A - explorer2 - 1 - 0 - E - A"
                 )
+            )
         );
     }
 

@@ -2,7 +2,7 @@ package fr.carbon.ewen.domain;
 
 import fr.carbon.ewen.domain.components.*;
 import fr.carbon.ewen.domain.exceptions.CollisionException;
-import fr.carbon.ewen.domain.exceptions.ExplorerOutOfMapException;
+import fr.carbon.ewen.domain.general.Position;
 import fr.carbon.ewen.domain.utils.validation.rules.NoExplorerNameDuplicates;
 import fr.carbon.ewen.domain.utils.validation.rules.NoOutOfBoundPositions;
 import fr.carbon.ewen.domain.utils.validation.rules.NoPositionDuplicates;
@@ -10,7 +10,6 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
-import one.util.streamex.StreamEx;
 
 import java.util.Comparator;
 import java.util.List;
@@ -32,25 +31,20 @@ public @NoPositionDuplicates
     /**
      * Run the simulation.
      * @throws CollisionException if an explorer collides with another explorer or a mountain.
-     * @throws ExplorerOutOfMapException if an explorer tries to move outside the map.
      */
-    public void run() throws CollisionException, ExplorerOutOfMapException {
+    public void run() throws CollisionException {
 
         if (played) throw new IllegalStateException("Simulation has already been run!");
         played = true;
 
         log.info("Starting simulation...");
 
+        CollisionListener.CollisionService collisionService = new CollisionListener.CollisionService(this);
+
         int maxSteps = explorers.stream()
             .map(explorer -> explorer.movements().size())
             .max(Comparator.comparing(v -> v))
             .orElse(0);
-
-        List<CollisionListener> collisionListeners = StreamEx.<CollisionListener>empty()
-            .append(mountains)
-            .append(treasures)
-            .append(explorers)
-            .toList();
 
         for (int step = 0; step < maxSteps; step++) {
             log.info("Step {}:", step);
@@ -60,19 +54,13 @@ public @NoPositionDuplicates
                 var movement = explorer.movements().get(step);
 
                 switch (movement) {
-                    case ROTATE_LEFT:
-                        explorer.rotateLeft();
-                        break;
-
-                    case ROTATE_RIGHT:
-                        explorer.rotateRight();
-                        break;
-
-                    case MOVE_FORWARD:
-                        explorer.moveForward();
-                        CollisionListener.detectCollisions(collisionListeners);
-                        if (!map.isInside(explorer.getPosition())) throw new ExplorerOutOfMapException(explorer);
-                        break;
+                    case ROTATE_LEFT -> explorer.rotateLeft();
+                    case ROTATE_RIGHT -> explorer.rotateRight();
+                    case MOVE_FORWARD -> {
+                        Position oldPosition = explorer.getPosition().copy();
+                        explorer.moveForward(this);
+                        collisionService.update(oldPosition, explorer);
+                    }
                 }
             }
         }

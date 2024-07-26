@@ -52,6 +52,26 @@ public class SimulationImporterTest {
     }
 
     @Test
+    public void shouldTolerateOverlappingExplorerAndTreasure() throws Exception {
+        assertThat(
+            testImport(
+                List.of(
+                    "C - 3 - 3",
+                    "T - 0 - 0 - 1",
+                    "A - exp1 - 0 - 0 - S - A"
+                )
+            )
+        ).isEqualTo(
+            new Simulation(
+                new PeruvianMap(3, 3),
+                List.of(),
+                List.of(new Treasure(new Position(0, 0), new Treasure.TreasureState(1))),
+                List.of(new Explorer("exp1", List.of(MOVE_FORWARD), new Explorer.ExplorerState(new Position(0, 0), SOUTH, 0)))
+            )
+        );
+    }
+
+    @Test
     public void shouldOnlyTakeIntoAccountTheFirstMap() throws Exception {
         assertThat(testImport(List.of("C - 1 - 1", "C - 2 - 2"))).isEqualTo(new Simulation(
                 new PeruvianMap(1, 1),
@@ -84,8 +104,10 @@ public class SimulationImporterTest {
     public void shouldNotImportWhenPositionDuplicates() {
         List.of(
             List.of("C - 3 - 3", "M - 0 - 0", "M - 0 - 0"),
+            List.of("C - 3 - 3", "T - 0 - 0 - 1", "T - 0 - 0 - 1"),
+            List.of("C - 3 - 3", "A - exp1 - 0 - 0 - S - A", "A - exp1 - 0 - 0 - S - A"),
             List.of("C - 3 - 3", "M - 0 - 0", "T - 0 - 0 - 1"),
-            List.of("C - 3 - 3", "T - 0 - 0 - 1", "A - exp1 - 0 - 0 - S - AAA")
+            List.of("C - 3 - 3", "M - 0 - 0", "A - exp1 - 0 - 0 - S - A")
         ).forEach(content -> assertThrows(SimulationValidationException.class, () -> testImport(content)));
     }
 

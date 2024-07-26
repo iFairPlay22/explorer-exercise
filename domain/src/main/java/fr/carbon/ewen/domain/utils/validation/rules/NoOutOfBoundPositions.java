@@ -39,14 +39,14 @@ public @interface NoOutOfBoundPositions {
             int widthBoundary = simulation.getMap().maxWidth();
             int heightBoundary = simulation.getMap().maxHeight();
 
-            return StreamEx.of(simulation.getMountains().stream().map(Mountain::getPosition))
-                    .append(simulation.getTreasures().stream().map(Treasure::getPosition))
-                    .append(simulation.getExplorers().stream().map(Explorer::state).map(Explorer.ExplorerState::getPosition))
-                    .allMatch(position ->
-                            0 <= position.width() && position.width() < widthBoundary
-                                    &&
-                                    0 <= position.height() && position.height() < heightBoundary
-                    );
+            return StreamEx.of(simulation.getMountains().stream().map(Mountain::position))
+                .append(simulation.getTreasures().stream().map(Treasure::getPosition))
+                .append(simulation.getExplorers().stream().map(Explorer::state).map(Explorer.ExplorerState::getPosition))
+                .allMatch(position ->
+                    0 <= position.width() && position.width() < widthBoundary
+                        &&
+                    0 <= position.height() && position.height() < heightBoundary
+                );
         }
     }
 }

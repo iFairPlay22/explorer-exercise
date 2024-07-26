@@ -1,7 +1,7 @@
 package fr.carbon.ewen.domain.components;
 
-import fr.carbon.ewen.domain.general.Position;
 import fr.carbon.ewen.domain.exceptions.CollisionException;
+import fr.carbon.ewen.domain.general.Position;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
@@ -33,20 +33,18 @@ public record Treasure(
     @Override
     public void onCollisionWith(@NotNull CollisionListener collisionListener) throws CollisionException {
         switch (collisionListener) {
-            case Explorer explorer:
+            case Explorer explorer -> {
                 if (canBeCollected()) {
                     log.info("{} was collected by explorer {}", this, explorer);
                     state.count -= 1;
                 } else {
                     log.warn("{} could not be collected by {}", this, explorer);
                 }
-                break;
-            case Mountain mountain:
-                log.warn("{} collided with mountain {}", this, mountain);
-                throw new CollisionException(this, mountain);
-            case Treasure treasure:
+            }
+            case Treasure treasure -> {
                 log.warn("{} collided with treasure {}", this, treasure);
                 throw new CollisionException(this, treasure);
+            }
         }
     }
 

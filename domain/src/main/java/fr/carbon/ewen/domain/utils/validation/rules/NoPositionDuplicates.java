@@ -36,13 +36,23 @@ public @interface NoPositionDuplicates {
 
         @Override
         public boolean isValid(@NotNull Simulation simulation, @NotNull ConstraintValidatorContext context) {
-            List<Position> allPositions = StreamEx.<Position>empty()
-                    .append(simulation.getMountains().stream().map(Mountain::getPosition))
-                    .append(simulation.getTreasures().stream().map(Treasure::getPosition))
-                    .append(simulation.getExplorers().stream().map(Explorer::getPosition))
-                    .toList();
 
-            return allPositions.size() == new HashSet<>(allPositions).size();
+            List<Position> treasurePositions = simulation.getTreasures().stream().map(Treasure::getPosition).toList();
+            List<Position> explorersPositions = simulation.getExplorers().stream().map(Explorer::getPosition).toList();
+            List<Position> mountainsPositions = simulation.getMountains().stream().map(Mountain::position).toList();
+            List<Position> treasureAndMountains =  StreamEx.<Position>empty().append(treasurePositions).append(mountainsPositions).toList();
+            List<Position> explorerAndMountains =  StreamEx.<Position>empty().append(explorersPositions).append(mountainsPositions).toList();
+
+            return
+                doesNoContainsDuplicates(treasurePositions) &&
+                doesNoContainsDuplicates(explorersPositions) &&
+                doesNoContainsDuplicates(mountainsPositions) &&
+                doesNoContainsDuplicates(treasureAndMountains) &&
+                doesNoContainsDuplicates(explorerAndMountains);
+        }
+
+        private boolean doesNoContainsDuplicates(List<Position> positions) {
+            return positions.size() == new HashSet<>(positions).size();
         }
     }
 }
